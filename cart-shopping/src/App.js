@@ -1,4 +1,5 @@
 import './App.css';
+import { Switch, Route, Redirect } from "react-router-dom";
 
 //components
 import Products from './components/shared/Products';
@@ -6,7 +7,10 @@ import Products from './components/shared/Products';
 function App() {
   return (
     <div className="App">
-      <Products />
+      <Switch>
+        <Route path="/products" component={Products} />
+        <Redirect to="/products" />
+      </Switch>
     </div>
   );
 }

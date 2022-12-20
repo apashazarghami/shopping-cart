@@ -9,14 +9,17 @@ import Product from "../Product";
 //asset
 import search from "../../assets/search.svg";
 
+//style
+import styles from "./Products.module.css";
+
 const Products = () => {
     const [categorySearch, setCategorySearch] = useState("");
     const products = useContext(ProductsContext);
 
     return(
-        <div>
+        <div className={styles.container}>
             <div>
-                <img src={search} alt="search" />
+                <img className={styles.searchIcon} src={search} alt="search" />
                 <input type="text" placeholder="Search category" value={categorySearch} onChange={event => setCategorySearch(event.target.value)} />
             </div>
             <div>
