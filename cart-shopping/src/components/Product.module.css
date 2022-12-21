@@ -9,6 +9,10 @@
     box-shadow: 1px 1px 10px #696969;
 }
 
+.container a {
+    text-decoration: none;
+}
+
 .container img {
     width: 96%;
     height: 180px;
@@ -40,4 +44,5 @@
     font-weight: bold;
     padding: 10px 20px;
     margin: 10px 10px 20px 10px;
+    font-size: 0.7rem;
 }
