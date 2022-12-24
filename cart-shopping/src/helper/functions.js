@@ -1,7 +1,13 @@
+//assets
+import fullStar from "../assets/full-star.png";
+import halfStar from "../assets/half-star.png";
+
 const shorten = title => {
     const splitedTitle = title.split(" ");
-    const shortTitle = `${splitedTitle[0]} ${splitedTitle[1]}`;
-    return shortTitle;
+    const shorterTitle = `${splitedTitle[0]} ${splitedTitle[1]}`;
+    const shortestTitle = `${splitedTitle[0]} ${splitedTitle[1]} ${splitedTitle[2]}`;
+    const shortDescrption = `${splitedTitle[0]} ${splitedTitle[1]} ${splitedTitle[2]} ${splitedTitle[3]} ${splitedTitle[4]} ${splitedTitle[5]}`
+    return ({shorterTitle, shortestTitle, shortDescrption});
 }
 
 const separateNumbers = number => {
@@ -10,4 +16,82 @@ const separateNumbers = number => {
     return({integer: Number(splitedNumber[0]), decimal});
 }
 
-export { shorten, separateNumbers };
+const createRate = (rate) => {
+    let rateTag;
+    if(separateNumbers(rate).integer === 1 && !separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+        </div>    
+    }
+    if(separateNumbers(rate).integer === 1 && separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={halfStar} alt="rate" />
+        </div>
+        
+    }
+    if(separateNumbers(rate).integer === 2 && !separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+        </div>
+        
+    }
+    if(separateNumbers(rate).integer === 2 && separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={halfStar} alt="rate" />
+        </div>
+
+    }
+    if(separateNumbers(rate).integer === 3 && !separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+        </div>
+        
+    }
+    if(separateNumbers(rate).integer === 3 && separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={halfStar} alt="rate" />
+        </div>
+        
+    }
+    if(separateNumbers(rate).integer === 4 && !separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+        </div>
+        
+    }
+    if(separateNumbers(rate).integer === 4 && separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={halfStar} alt="rate" />
+        </div>
+        
+    }
+    if(separateNumbers(rate).integer === 5 && !separateNumbers(rate).decimal) {
+        rateTag = <div>
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+            <img src={fullStar} alt="rate" />
+        </div>
+        
+    }
+    return rateTag;
+}
+
+export { shorten, createRate };

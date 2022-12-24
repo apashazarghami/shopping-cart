@@ -1,0 +1,148 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.container > img {
+    width: 100%;
+    padding: 10px;
+    height: 60%;
+    background: #ffffff;
+}
+
+.category {
+    width: 100vw;
+    height: 12vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.category > div {
+    width: 25vw;
+    background: #ebeaef;
+    margin: 0 auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category img {
+    padding: 10px;
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+}
+
+.category p {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #828282;
+    text-align: center;
+    padding: 5px 10px 10px 10px;
+}
+
+.detailsInformation {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #ebeaef;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    height: 22%;
+    overflow: hidden;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h3 {
+    font-size: 0.9rem;
+    color:#1c1b1b
+}
+
+.title img {
+    width: 20px;
+    height: 20px; 
+    text-align: end;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 0.7rem;
+    color: #5a5a5a;
+    height: 30%;
+}
+
+.description p {
+    width: 75%;
+}
+
+.description span {
+    width: 25%;
+    text-align: end;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+.price p {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #1d1b1b;
+}
+
+.price div {
+    border: 1px solid #c6c6c6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ebeaef;
+    padding: 10px 0;
+}
+
+.price div > button {
+    border: none;
+    outline: none;
+    background: #ebeaef;
+    padding: 0 15px;
+    color: #5c5c5c;
+    cursor: pointer;
+}
+
+.price div span {
+    border: none;
+    outline: none;
+    background: #ebeaef;
+    padding: 0 15px;
+    color: #5c5c5c;
+}
+
+.price a {
+    text-decoration: none;
+    background: #1d1c1c;
+    color: #ffffff;
+    margin-right: 20px;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 20px;
+}
