@@ -4,10 +4,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 //components
 import Products from './components/shared/Products';
 import ProductDetails from './components/shared/ProductDetails';
+import Navbar from './components/shared/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Switch>
         <Route path="/products/:id" component={ProductDetails} />
         <Route path="/products" component={Products} />

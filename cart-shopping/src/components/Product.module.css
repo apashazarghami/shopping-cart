@@ -76,3 +76,9 @@
     height: 18px;
     width: 18px;
 }
+
+.buttons span {
+    font-weight: bold;
+    color: #1d1c1c;
+    font-size: 0.8rem;
+}

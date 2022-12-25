@@ -12,9 +12,10 @@ import men from "../../assets/men's clothing.png";
 import women from "../../assets/women's clothing.png";
 import jewelery from "../../assets/jewelery.png";
 import electronics from "../../assets/electronics.png";
+import trash from "../../assets/trash-details.svg";
 
 //function
-import { createRate, shorten, countQuantity } from "../../helper/functions";
+import { createRate, shorten, countQuantity, isInCart } from "../../helper/functions";
 
 //context
 import { CartContext } from "../../context/CartContextProvider";
@@ -24,10 +25,7 @@ const ProductDetails = () => {
     const products = useContext(ProductsContext);
     const product = products[numberId.id - 1];
     const { image, category, title, description, price, rating:{rate, count}, id } = product;
-    console.log(product)
     const { dispatch, state } = useContext(CartContext);
-    console.log(state);
-    console.log(dispatch);
     return(
         <div className={styles.container}>
            <img src={image} alt={title} />
@@ -64,9 +62,26 @@ const ProductDetails = () => {
                 <div className={styles.price}>
                     <p>${price}</p>
                     <div>
+                    {
+                        !isInCart(state, id) &&
+                        <button onClick={() => dispatch({type: "ADD_ITEM", payload: product})}>Add to cart</button>
+                    } 
+                    {
+                        isInCart(state, id) && countQuantity(state, id) === 1 &&
+                        <button onClick={() => dispatch({type: "REMOVE_ITEM", payload: product})}><img src={trash} alt="trash" /></button>
+                    }
+                    {
+                        isInCart(state, id) && countQuantity(state, id) > 1 && 
                         <button onClick={() => dispatch({type: "DECREASE", payload: product})}>-</button>
-                        <span>{countQuantity(state, id)}</span>
+                    }
+                    {
+                        isInCart(state, id) && countQuantity(state, id) && <span>{countQuantity(state, id)}</span>
+                    }
+                    
+                    {
+                        isInCart(state, id) && countQuantity(state, id) >= 1 &&
                         <button onClick={() => dispatch({type: "INCREASE", payload: product})}>+</button>
+                    }
                     </div>
                     <Link to="/cart">Cart</Link>
                 </div>

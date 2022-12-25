@@ -1,7 +1,8 @@
 .container {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 68px);
     background: #ffffff;
+    margin-top: 50px;
 }
 
 .container > img {
@@ -117,6 +118,8 @@
     align-items: center;
     background: #ebeaef;
     padding: 10px 0;
+    width: 103px;
+    height: 40px;
 }
 
 .price div > button {
@@ -126,14 +129,21 @@
     padding: 0 15px;
     color: #5c5c5c;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .price div span {
     border: none;
     outline: none;
     background: #ebeaef;
-    padding: 0 15px;
+    /* padding: 0 15px; */
     color: #5c5c5c;
+    font-weight: bold;
+}
+
+.price img {
+    height: 15px;
+    width: 10px;
 }
 
 .price a {
@@ -145,4 +155,10 @@
     font-weight: bold;
     font-size: 1rem;
     border-radius: 20px;
+    box-shadow: 1px 1px 5px #828282;
+    transition: all 0.3s linear;
+}
+
+.price a:hover {
+    background: #000000;
 }

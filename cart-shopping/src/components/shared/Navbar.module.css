@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 10px 20px;
+    z-index: 20;
+    background: #ebeaef;
+    box-shadow: 1px 1px 10px 1px #828282;
+}
+
+.container button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.container a {
+    text-decoration: none;
+    color: #1d1c1c;
+    font-weight: bold;
+}
+
+.container div:nth-child(3) {
+    position: relative;
+}
+
+.container div:nth-child(3) span {
+    position: absolute;
+    left: 10px;
+    top: -2px;
+    background: #1d1c1c;
+    color: #ebeaef;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 0.5rem;
+    font-weight: bold;
+}
