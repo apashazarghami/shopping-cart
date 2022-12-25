@@ -3,6 +3,7 @@
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s linear;
+    height: 320px;
 }
 
 .container:hover {
@@ -13,9 +14,9 @@
     text-decoration: none;
 }
 
-.container img {
+.container a > img {
     width: 96%;
-    height: 180px;
+    height: 55%;
     padding: 8px;
     margin: 0 auto;
 }
@@ -35,7 +36,7 @@
     color: #1d1c1c;
 }
 
-.container button {
+.container > button {
     background: #1d1c1c;
     color: #ffffff;
     border: none;
@@ -45,4 +46,33 @@
     padding: 10px 20px;
     margin: 10px 10px 20px 10px;
     font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.buttons > button {
+    background: #1d1c1c;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: bold;
+    height: 32px;
+    width: 32px;
+    padding: 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button img {
+    height: 18px;
+    width: 18px;
 }

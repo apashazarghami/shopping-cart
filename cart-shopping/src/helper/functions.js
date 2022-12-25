@@ -94,4 +94,17 @@ const createRate = (rate) => {
     return rateTag;
 }
 
-export { shorten, createRate };
+const isInCart = (state, id) => {
+    if(!state.selectedItems.find(product => product.id === id)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+const countQuantity = (state, id) => {
+    const index = state.selectedItems.findIndex(product => product.id === id);
+    return state.selectedItems[index].quantity;
+}
+
+export { shorten, createRate, isInCart, countQuantity };

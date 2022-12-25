@@ -14,13 +14,20 @@ import jewelery from "../../assets/jewelery.png";
 import electronics from "../../assets/electronics.png";
 
 //function
-import { createRate, shorten } from "../../helper/functions";
+import { createRate, shorten, countQuantity } from "../../helper/functions";
+
+//context
+import { CartContext } from "../../context/CartContextProvider";
 
 const ProductDetails = () => {
-    const id = useParams();
+    const numberId = useParams();
     const products = useContext(ProductsContext);
-    const product = products[id.id - 1];
-    const { image, category, title, description, price, rating:{rate, count} } = product;
+    const product = products[numberId.id - 1];
+    const { image, category, title, description, price, rating:{rate, count}, id } = product;
+    console.log(product)
+    const { dispatch, state } = useContext(CartContext);
+    console.log(state);
+    console.log(dispatch);
     return(
         <div className={styles.container}>
            <img src={image} alt={title} />
@@ -57,11 +64,11 @@ const ProductDetails = () => {
                 <div className={styles.price}>
                     <p>${price}</p>
                     <div>
-                        <button>-</button>
-                        <span>0</span>
-                        <button>+</button>
+                        <button onClick={() => dispatch({type: "DECREASE", payload: product})}>-</button>
+                        <span>{countQuantity(state, id)}</span>
+                        <button onClick={() => dispatch({type: "INCREASE", payload: product})}>+</button>
                     </div>
-                    <Link>Cart</Link>
+                    <Link to="/cart">Cart</Link>
                 </div>
            </div>
         </div>
