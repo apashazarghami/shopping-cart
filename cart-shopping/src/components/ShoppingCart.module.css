@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ebeaef;
+    width: 100vw;
+    padding: 20px;
+}
+
+.container div:first-child img {
+    width: 55px;
+    height: 70px;
+    padding: 2px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.container h3 {
+    font-size: 0.8rem;
+    color: #1d1c1c;
+}
+
+.container div:nth-child(2) {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container div:nth-child(2) p:nth-child(2) {
+    color: #9897a2;
+    font-size: 0.6rem;
+    line-height: 10px;
+    margin-top: 5px;
+}
+
+.container div:nth-child(2) p:nth-child(3) {
+    font-size: 0.8rem;
+    color: #1d1c1c;
+    margin-top: 5px;
+}
+
+.container button {
+    border: 1px solid #383738;
+    border-radius: 50%;
+    outline: none;
+    background: none;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    
+}
+
+.container div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+}
+
+.container div:nth-child(3) span {
+    color: #302f30;
+    font-weight: bold;
+}
+
+.container div:nth-child(3) button:nth-child(1) {
+    color: #1d1c1c;
+    
+}
+
+.container div:nth-child(3) button:nth-child(1) img {
+    width: 20px;
+    height: 20px;
+    padding: 3px 3px 2px 2px;
+}
+
+.container div:nth-child(3) button:nth-child(3) {
+    background: #1d1c1c;
+    color: #ffffff;
+}

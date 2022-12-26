@@ -21,7 +21,7 @@ const Product = ( { data }) => {
             <Link to={`/products/${id}`}>
                 <img src={image} alt={title} />
             </Link>
-            <h3>{shorten(title).shorterTitle}</h3>
+            <h3>{shorten(title).shortestTitle}</h3>
             <p>${price}</p>
             {
                 !isInCart(state, id) &&

@@ -4,8 +4,8 @@ import halfStar from "../assets/half-star.png";
 
 const shorten = title => {
     const splitedTitle = title.split(" ");
-    const shorterTitle = `${splitedTitle[0]} ${splitedTitle[1]}`;
-    const shortestTitle = `${splitedTitle[0]} ${splitedTitle[1]} ${splitedTitle[2]}`;
+    const shortestTitle = `${splitedTitle[0]} ${splitedTitle[1]}`;
+    const shorterTitle = `${splitedTitle[0]} ${splitedTitle[1]} ${splitedTitle[2]}`;
     const shortDescrption = `${splitedTitle[0]} ${splitedTitle[1]} ${splitedTitle[2]} ${splitedTitle[3]} ${splitedTitle[4]} ${splitedTitle[5]}`
     return ({shorterTitle, shortestTitle, shortDescrption});
 }

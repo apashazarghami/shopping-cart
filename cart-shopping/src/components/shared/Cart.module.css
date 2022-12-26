@@ -1,0 +1,104 @@
+.container {
+    margin-top: 50px;
+}
+
+.price {
+    margin: 0 20px;
+}
+
+.costInformation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.costInformation h3 {
+    font-size: 0.7rem;
+}
+
+.costInformation p {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.costInformation p span {
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.costInformation:first-child, .costInformation:nth-child(2) {
+    border-bottom: 2px solid #fbfbfc;
+    padding-bottom: 5px;
+}
+
+.buttons {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons button {
+    font-weight: bold;
+    padding: 15px;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttons button:first-child {
+    width: calc(100vw - 40px);
+    background: #1d1c1c;
+    color: #ffffff;
+    margin-top: 20px;
+    border-radius: 30px;
+    transition: all 0.3s linear;
+}
+
+.buttons button:last-child {
+    color: #1d1c1c;
+    background: none;
+    margin-top: 10px;
+    transition: all 0.3s linear;
+}
+
+.buttons button:first-child:hover {
+    background: #000000;
+}
+
+.buttons button:last-child:hover {
+    color: #000000;
+}
+
+.checkoutClear {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkoutClear h3 {
+    color: #1d1c1c;
+    font-size: 1rem;
+}
+
+.checkoutClear a {
+    background: #1d1c1c;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-size: bold;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    transition: all 0.3s linear;
+}
+
+.checkoutClear a:hover {
+    background: #000000;
+}

@@ -5,8 +5,8 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 //assets
-import cart from "../../assets/cart2.png";
-import back from "../../assets/back2.png";
+import cart from "../../assets/cart.png";
+import back from "../../assets/back.png";
 
 //context
 import { CartContext } from "../../context/CartContextProvider";

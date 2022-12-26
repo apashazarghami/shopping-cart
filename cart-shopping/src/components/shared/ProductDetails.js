@@ -49,7 +49,7 @@ const ProductDetails = () => {
            <div className={styles.detailsInformation}>
                 <div>
                     <div className={styles.title}>
-                        <h3>{shorten(title).shortestTitle}</h3>
+                        <h3>{shorten(title).shorterTitle}</h3>
                         <div>
                             {createRate(rate)}
                         </div>
