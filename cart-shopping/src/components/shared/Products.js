@@ -6,8 +6,9 @@ import { ProductsContext } from "../../context/ProductsContextProvider";
 //component
 import Product from "../Product";
 
-//asset
+//assets
 import search from "../../assets/search.svg";
+import loading from "../../assets/loading.gif";
 
 //style
 import styles from "./Products.module.css";
@@ -24,7 +25,12 @@ const Products = () => {
             </div>
             <div>
                 {
-                    products.map(product => product.category.includes(categorySearch) && <Product key={product.id} data={product} />)
+                    products.length ?
+                    products.map(product => product.category.includes(categorySearch) && <Product key={product.id} data={product} />) :
+                    <div className={styles.loading}>
+                        <h2>Loading...</h2>
+                        <img src={loading} alt="loading" />
+                    </div>
                 }
             </div>
         </div>

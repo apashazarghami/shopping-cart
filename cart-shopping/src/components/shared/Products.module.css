@@ -9,7 +9,7 @@
 
 .searchIcon {
     position: absolute;
-    top: 38px;
+    top: 35px;
     left: 30px;
 }
 
@@ -30,8 +30,74 @@
 
 .container > div:last-child {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 24px;
     margin: 0 24px;
     padding-bottom: 24px;
+}
+
+.loading {
+    width: calc(100vw - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading h2 {
+    color: #a7a7a7;
+    font-size: 2rem;
+}
+
+.loading img {
+    border-radius: 50%;
+}
+
+@media (min-width: 481px) {
+    .container > div:first-child {
+        width: 480px;
+    }
+
+    .container > div:first-child {
+        padding: 24px 48px 48px 48px;
+    }
+
+    .searchIcon {
+        left: 54px;
+    }
+
+    .container > div:last-child {
+        gap: 48px;
+        margin: 0 48px;
+        padding-bottom: 48px;
+    }
+
+    .loading {
+        width: calc(100vw - 96px);
+    }
+}
+
+@media (min-width: 769px) {
+    .container > div:first-child {
+        width: 50vw;
+    }
+
+    .container > div:first-child {
+        padding: 48px 72px 72px 72px;
+    }
+
+    .searchIcon {
+        left: 78px;
+        top: 60px;
+    }
+
+    .container > div:last-child {
+        gap: 72px;
+        margin: 0 72px;
+        padding-bottom: 72px;
+    }
+
+    .loading {
+        width: calc(100vw - 144px);
+    }
 }

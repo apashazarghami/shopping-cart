@@ -14,9 +14,11 @@ const Cart = () => {
     const { state, dispatch } = useContext(CartContext);
     return(
         <div className={styles.container}>
-            {
-                state.selectedItems.map(product => <ShoppingCart key={product.id} productsData={product} />)
-            }
+            <div>
+                {
+                    state.selectedItems.map(product => <ShoppingCart key={product.id} productsData={product} />)
+                }
+            </div>
             {
                 state.totalQuantity !== 0  &&
                 <div>

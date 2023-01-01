@@ -6,7 +6,7 @@
     top: 0;
     right: 0;
     left: 0;
-    padding: 10px 20px;
+    padding: 10px 24px;
     z-index: 20;
     background: #ebeaef;
     box-shadow: 1px 1px 10px 1px #828282;
@@ -39,4 +39,16 @@
     padding: 2px 5px;
     font-size: 0.5rem;
     font-weight: bold;
+}
+
+@media (min-width: 481px) {
+    .container {
+        padding: 10px 48px;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        padding: 10px 72px;
+    }
 }

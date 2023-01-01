@@ -3,7 +3,7 @@
 }
 
 .price {
-    margin: 0 20px;
+    margin: 0 24px;
 }
 
 .costInformation {
@@ -34,7 +34,7 @@
 }
 
 .buttons {
-    margin: 20px;
+    margin: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +51,7 @@
 }
 
 .buttons button:first-child {
-    width: calc(100vw - 40px);
+    width: calc(100vw - 48px);
     background: #1d1c1c;
     color: #ffffff;
     margin-top: 20px;
@@ -101,4 +101,51 @@
 
 .checkoutClear a:hover {
     background: #000000;
+}
+
+@media(min-width: 481px) {
+    .price {
+        margin: 0 48px;
+    }
+
+    .buttons {
+        margin: 24px 48px;
+    }
+
+    .buttons button:first-child {
+        width: calc(100vw - 96px);
+    }
+}
+
+@media(min-width: 769px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container > div:nth-child(1) {
+        width: 60%;
+    }
+
+    .container > div:nth-child(2) {
+        width: 40%;
+        margin-top: 25px;
+    }
+
+    .price {
+        margin: 0 72px;
+    }
+
+    .buttons {
+        margin: 24px 72px;
+    }
+
+    .buttons button:first-child {
+        width: fit-content;
+        font-size: 0.7rem;
+    }
+
+    .checkoutClear {
+        margin-right: calc(50vw - 144px);
+    }
 }
