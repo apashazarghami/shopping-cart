@@ -8,21 +8,20 @@
 .container > img {
     width: 100%;
     padding: 24px;
-    height: 60%;
+    height: calc(58vh - 32px);
     background: #ffffff;
 }
 
 .category {
     width: 100vw;
-    height: 12vh;
     background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
 }
 
 .category > div {
+    height: calc(17vh - 32px);
     width: 87px;
     background: #ebeaef;
     margin: 0 auto;
@@ -34,10 +33,9 @@
 }
 
 .category img {
-    padding: 24px;
-    width: 48px;
-    height: 48px;
-    padding: 5px;
+    width: 32px;
+    height: 32px;
+    margin-top: 10px;
 }
 
 .category p {
@@ -57,8 +55,7 @@
     left: 0;
     right: 0;
     padding: 12px 24px;
-    height: 22%;
-    overflow: hidden;
+    height: calc(25vh - 32px);
 }
 
 .title {
