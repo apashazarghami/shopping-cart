@@ -1,6 +1,6 @@
 .container {
     width: 100vw;
-    height: calc(100vh - 68px);
+    height: calc(100vh - 98px);
     background: #ffffff;
     margin-top: 50px;
 }
@@ -8,7 +8,7 @@
 .container > img {
     width: 100%;
     padding: 24px;
-    height: calc(58vh - 32px);
+    height: 50%;
     background: #ffffff;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .category > div {
-    height: calc(17vh - 32px);
+    height: 78px;
     width: 87px;
     background: #ebeaef;
     margin: 0 auto;
@@ -55,7 +55,7 @@
     left: 0;
     right: 0;
     padding: 12px 24px;
-    height: calc(25vh - 32px);
+    height: 20%;
 }
 
 .title {
@@ -65,7 +65,7 @@
 }
 
 .title h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color:#1c1b1b
 }
 
