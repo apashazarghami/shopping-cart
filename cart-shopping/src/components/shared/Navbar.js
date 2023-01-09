@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //styles
 import styles from "./Navbar.module.css";
@@ -13,9 +13,9 @@ import { CartContext } from "../../context/CartContextProvider";
 
 const Navbar = () => {
     const { state } = useContext(CartContext);
-    const history = useHistory();
+    const history = useNavigate();
     const redirect = () => {
-        history.goBack();
+        history(-1);
     }
     return(
         <div className={styles.container}>

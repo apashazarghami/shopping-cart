@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 //components
 import Products from './components/shared/Products';
@@ -11,12 +11,12 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Switch>
-        <Route path="/products/:id" component={ProductDetails} />
-        <Route path="/products" component={Products} />
-        <Route path="/cart" component={Cart} />
-        <Redirect to="/products" />
-      </Switch>
+      <Routes>
+        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/*" element={<Navigate to="/products" />} />
+      </Routes>
     </div>
   );
 }

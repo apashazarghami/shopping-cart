@@ -96,8 +96,4 @@
         margin: 0 72px;
         padding-bottom: 72px;
     }
-
-    .loading {
-        width: calc(100vw - 144px);
-    }
 }

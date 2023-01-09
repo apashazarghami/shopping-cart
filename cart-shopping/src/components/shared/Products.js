@@ -5,6 +5,7 @@ import { ProductsContext } from "../../context/ProductsContextProvider";
 
 //component
 import Product from "../Product";
+import Loading from "../Loading";
 
 //assets
 import search from "../../assets/search.svg";
@@ -27,10 +28,7 @@ const Products = () => {
                 {
                     products.length ?
                     products.map(product => product.category.includes(categorySearch) && <Product key={product.id} data={product} />) :
-                    <div className={styles.loading}>
-                        <h2>Loading...</h2>
-                        <img src={loading} alt="loading" />
-                    </div>
+                    <Loading />
                 }
             </div>
         </div>

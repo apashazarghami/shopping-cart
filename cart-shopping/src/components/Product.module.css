@@ -2,7 +2,7 @@
     background: #ffffff;
     border-radius: 10px;
     transition: all 0.3s linear;
-    height: 320px;
+    height: 410px;
 }
 
 .container:hover {
@@ -15,7 +15,7 @@
 
 .container a > img {
     width: 96%;
-    height: 55%;
+    height: 65%;
     padding: 10px;
     margin: 0 auto;
 }
@@ -80,4 +80,14 @@
     font-weight: bold;
     color: #1d1c1c;
     font-size: 0.8rem;
+}
+
+@media(min-width: 769px) {
+    .container {
+        height: 320px;
+    }
+    
+    .container a > img {
+        height: 55%;
+    }
 }
