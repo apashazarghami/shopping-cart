@@ -1,7 +1,5 @@
-import React, { useContext, useState } from "react";
-
-//context
-import { ProductsContext } from "../../context/ProductsContextProvider";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 //component
 import Product from "../Product";
@@ -9,14 +7,22 @@ import Loading from "../Loading";
 
 //assets
 import search from "../../assets/search.svg";
-import loading from "../../assets/loading.gif";
 
 //style
 import styles from "./Products.module.css";
 
+//redux
+import fetchRequest from "../../redux/products/productsActions";
+
 const Products = () => {
     const [categorySearch, setCategorySearch] = useState("");
-    const products = useContext(ProductsContext);
+    const productsState = useSelector(state => state.productsState);
+    const dispatch = useDispatch();
+    const { loading, products, error } = productsState;
+
+    useEffect(() => {
+        if(!products.length) dispatch(fetchRequest())
+    }, []);
 
     return(
         <div className={styles.container}>
@@ -26,9 +32,11 @@ const Products = () => {
             </div>
             <div>
                 {
-                    products.length ?
-                    products.map(product => product.category.includes(categorySearch) && <Product key={product.id} data={product} />) :
-                    <Loading />
+                    loading ? 
+                    <Loading /> :
+                    error ?
+                    <h2>{error}</h2> :
+                    products.map(product => product.category.includes(categorySearch) && <Product key={product.id} data={product} />)
                 }
             </div>
         </div>

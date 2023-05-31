@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 //styles
 import styles from "./ShoppingCart.module.css";
-
-//context
-import { CartContext } from "../context/CartContextProvider";
 
 //functions
 import { countQuantity, shorten } from "../helper/functions";
@@ -13,8 +11,14 @@ import { countQuantity, shorten } from "../helper/functions";
 //asset
 import trash from "../assets/trash-details.svg";
 
+//redux
+import { decrease, increase, removeItem } from "../redux/cart/cartActions";
+
+
+
 const ShoppingCart = productsData => {
-    const { state, dispatch } = useContext(CartContext);
+    const state = useSelector(state => state.cartState);
+    const dispatch = useDispatch();
     const { image, title, description, price, id } = productsData.productsData;
     return(
         <div className={styles.container}>
@@ -29,11 +33,11 @@ const ShoppingCart = productsData => {
             <div>
                 {
                     countQuantity(state, id) === 1 ?
-                    <button onClick={() => dispatch({type: "REMOVE_ITEM", payload: productsData.productsData})}><img src={trash} alt="trash" /></button> :
-                    <button onClick={() => dispatch({type: "DECREASE", payload: productsData.productsData})}>-</button>
+                    <button onClick={() => dispatch(removeItem(productsData.productsData))}><img src={trash} alt="trash" /></button> :
+                    <button onClick={() => dispatch(decrease(productsData.productsData))}>-</button>
                 }
                 <span>{countQuantity(state, id)}</span>
-                <button onClick={() => dispatch({type: "INCREASE", payload: productsData.productsData})}>+</button>
+                <button onClick={() => dispatch(increase(productsData.productsData))}>+</button>
             </div>
         </div>
     )

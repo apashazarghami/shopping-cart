@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 //function
 import { countQuantity, isInCart, shorten } from "../helper/functions";
@@ -7,15 +8,16 @@ import { countQuantity, isInCart, shorten } from "../helper/functions";
 //style
 import styles from "./Product.module.css";
 
-//context
-import { CartContext } from "../context/CartContextProvider";
-
 //asset
 import trash from "../assets/trash.svg";
 
+//redux
+import { addItem, decrease, increase, removeItem } from "../redux/cart/cartActions";
+
 const Product = ( { data }) => {
     const { image, title, price, id } = data;
-    const { state, dispatch } = useContext(CartContext);
+    const state = useSelector(state => state.cartState);
+    const dispatch = useDispatch();
     return(
         <div className={styles.container}>
             <Link to={`/products/${id}`}>
@@ -25,16 +27,16 @@ const Product = ( { data }) => {
             <p>${price}</p>
             {
                 !isInCart(state, id) &&
-                <button onClick={() => dispatch({type: "ADD_ITEM", payload: data})}>Add to cart</button>
+                <button onClick={() => dispatch(addItem(data))}>Add to cart</button>
             } 
             <div className={styles.buttons}>
                 {
                     isInCart(state, id) && countQuantity(state, id) === 1 &&
-                    <button onClick={() => dispatch({type: "REMOVE_ITEM", payload: data})}><img src={trash} alt="trash" /></button>
+                    <button onClick={() => dispatch(removeItem(data))}><img src={trash} alt="trash" /></button>
                 }
                 {
                     isInCart(state, id) && countQuantity(state, id) > 1 && 
-                    <button onClick={() => dispatch({type: "DECREASE", payload: data})}>-</button>
+                    <button onClick={() => dispatch(decrease(data))}>-</button>
                 }
                 {
                     isInCart(state, id) && countQuantity(state, id) && <span>{countQuantity(state, id)}</span>
@@ -42,7 +44,7 @@ const Product = ( { data }) => {
                 
                 {
                     isInCart(state, id) && countQuantity(state, id) >= 1 &&
-                    <button onClick={() => dispatch({type: "INCREASE", payload: data})}>+</button>
+                    <button onClick={() => dispatch(increase(data))}>+</button>
                 }
             </div>
         </div>

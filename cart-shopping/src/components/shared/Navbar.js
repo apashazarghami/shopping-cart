@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 //styles
 import styles from "./Navbar.module.css";
@@ -8,11 +9,8 @@ import styles from "./Navbar.module.css";
 import cart from "../../assets/cart.png";
 import back from "../../assets/back.png";
 
-//context
-import { CartContext } from "../../context/CartContextProvider";
-
 const Navbar = () => {
-    const { state } = useContext(CartContext);
+    const state = useSelector(state => state.cartState);
     const history = useNavigate();
     const redirect = () => {
         history(-1);
